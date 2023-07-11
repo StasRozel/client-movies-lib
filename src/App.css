@@ -1,0 +1,178 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+table {
+  width: 90%;
+  display: grid;
+  justify-items: center;
+ 
+  border-collapse: collapse;
+  border-top: 2px black solid;
+}
+.movie {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 20% 30% 10% 20% 10% 7% 3%;
+  justify-items: center;
+  align-items: center;
+  
+  list-style-type: none;
+
+  background-color: #548cfa;
+  
+  margin: 0 auto;
+}
+
+.movie > td, th {
+  width: 100%;
+  height: 100%;
+  border-top: 2px black solid;
+  border-right: 2px black solid;
+}
+
+.time_table {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.hours,.minutes {
+  width: 50%;
+
+  margin: 0;
+
+  justify-self: start;
+}
+.hours {
+  justify-self: end;
+}
+.rating, .year {
+  border: none;
+  width: 95%;
+  justify-self: center;
+}
+
+.del {
+  background: none;
+  border: none;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-row-gap: 40px;
+
+  margin: 10px;
+  padding: 20px;
+
+  background-color: #548cfa;
+
+  border-radius: 30px;
+}
+
+input {
+  height: 30px;
+  align-self: center;
+  
+  background: none;
+
+  border: none;
+  border-bottom: 3px black solid;
+
+  outline: none;
+
+  font-size: 22px;
+  margin-right: 20px;
+}
+
+p {
+  justify-self: start;
+  margin-left: 20px;
+}
+
+.time {
+  grid-column: 1/3;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.messageErrorValidForm {
+  grid-column: 1/3;
+  justify-self: center;
+}
+
+.in_duration_hours, .in_duration_minutes {
+  width: 40px;
+}
+.in_duration_minutes {
+  justify-self: center;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    display: none; 
+}
+.btn_add {
+  grid-column: 1/3;
+  justify-self: center;
+
+  width: 160px;
+  height: 40px; 
+
+  border: none;
+  border-radius: 15px;
+
+  background: #57c1df;
+
+  font-size: 22px;
+
+  cursor: pointer;
+}
+
+.del_All {
+  width: 160px;
+  height: 40px; 
+
+  border: none;
+  border-radius: 15px;
+
+  background: #57c1df;
+
+  font-size: 22px;
+
+  cursor: pointer;
+
+  margin: 20px;
+}
+
+textarea {
+  width: auto;
+  height: 30px;
+}
+
+.patch {
+  margin: 0;
+  width: 100%;
+  height: 95%;
+  border-top: 2px black solid;
+  border-right: 2px black solid;
+}
