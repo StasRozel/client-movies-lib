@@ -4,7 +4,7 @@ module.exports = function(app) {
   app.use(
     '/api',
     createProxyMiddleware({
-      target: 'https://movies-lib-2zxy.onrender.com:3001',
+      target: 'https://movies-lib-2zxy.onrender.com:10000',
       changeOrigin: true,
       "secure": false,
       headers: {
