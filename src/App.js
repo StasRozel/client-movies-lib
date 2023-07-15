@@ -46,7 +46,7 @@ function App() {
   })
 
   useEffect(() => {
-    fetch('/api/movies')
+    fetch('https://movies-lib-2zxy.onrender.com/api/movies')
       .then(response => response.json())
       .then(response => { setMovies(response) })
 
