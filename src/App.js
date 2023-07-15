@@ -34,12 +34,12 @@ function App() {
   const btnDel = document.querySelectorAll('.del');
   btnDel.forEach((el, i) => {
     el.onclick = () => {
-      fetch('/api/movies/' + movies[i]._id, {
+      fetch('https://movies-lib-2zxy.onrender.com/api/movies/' + movies[i]._id, {
         method: 'DELETE'
       })
 
 
-      fetch('/api/movies')
+      fetch('https://movies-lib-2zxy.onrender.com/api/movies')
         .then(response => response.json())
         .then(response => { setMovies(response) })
     }
@@ -109,7 +109,7 @@ function App() {
                   break;
 
               }
-              fetch('/api/movies/' + movies[((ind) - (Options[key])) / 6]._id, {
+              fetch('https://movies-lib-2zxy.onrender.com/api/movies/' + movies[((ind) - (Options[key])) / 6]._id, {
                 method: "PATCH",
                 headers: {
                   'Content-Type': 'application/json;charset=utf-8'
@@ -132,7 +132,7 @@ function App() {
   })
 
   function delAll() {
-    fetch('/api/movies/del_all', {
+    fetch('https://movies-lib-2zxy.onrender.com/api/movies/del_all', {
       method: "POST",
       headers: {
         'Content-Type': 'application/json;charset=utf-8'
