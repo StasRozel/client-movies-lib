@@ -8,7 +8,7 @@ module.exports = function(app) {
       changeOrigin: true,
       "secure": false,
       headers: {
-        "Connection": "keep-alive"
+        "Connection": "keep-alive" 
     },
     })
   );
