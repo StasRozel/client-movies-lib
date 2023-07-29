@@ -34,7 +34,7 @@ function MoviesMap(props) {
    
     patch.addEventListener('keydown', (e) => {
       let flag = false;
-                if (e.code === 'Enter') {
+                if (e.code === 'Enter' || e.key === 'Enter') {
                   switch (name) {
                     case "title":
                       body1 = {
