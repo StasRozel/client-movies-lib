@@ -40,7 +40,7 @@ let Form = () => {
     let setMovie = () => {
         
         if (!checkValidForm()) {
-            document.querySelector('form').submit();
+            
             fetch('https://movies-lib-2zxy.onrender.com/api/getmovie', {
                 method: 'POST',
                 headers: {
@@ -48,6 +48,7 @@ let Form = () => {
                 },
                 body: JSON.stringify(getMovieUser())
             })
+            document.querySelector('form').submit();
         }
         if(checkValidForm() && flag) {
             document.querySelector('.time').insertAdjacentHTML('afterend', `<p class="messageErrorValidForm">Не все поля заполнены!</p>`)
