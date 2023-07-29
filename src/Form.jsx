@@ -36,12 +36,12 @@ let Form = () => {
         return flag;
     
     }
-
+    let flag = true;
     let setMovie = () => {
-
+        
         if (!checkValidForm()) {
             document.querySelector('form').submit();
-            fetch('/api/getmovie', {
+            fetch('https://movies-lib-2zxy.onrender.com/api/getmovie', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json;charset=utf-8'
@@ -49,8 +49,9 @@ let Form = () => {
                 body: JSON.stringify(getMovieUser())
             })
         }
-        if(checkValidForm()) {
+        if(checkValidForm() && flag) {
             document.querySelector('.time').insertAdjacentHTML('afterend', `<p class="messageErrorValidForm">Не все поля заполнены!</p>`)
+            flag = false;
         }
 
 

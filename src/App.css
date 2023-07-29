@@ -33,7 +33,7 @@ table {
 .movie {
   width: 100%;
   display: grid;
-  grid-template-columns: 20% 30% 10% 20% 10% 7% 3%;
+  grid-template-columns: 20% 28% 10% 20% 10% 7% 5%;
   justify-items: center;
   align-items: center;
   
@@ -49,6 +49,7 @@ table {
   height: 100%;
   border-top: 2px black solid;
   border-right: 2px black solid;
+  font-size: 2vw;
 }
 
 .time_table {
@@ -78,6 +79,7 @@ table {
 }
 
 form {
+
   display: grid;
   grid-template-columns: 40% 60%;
   grid-row-gap: 40px;
@@ -89,6 +91,8 @@ form {
 
   border-radius: 30px;
 }
+
+
 
 input {
   height: 30px;
@@ -175,4 +179,30 @@ textarea {
   height: 95%;
   border-top: 2px black solid;
   border-right: 2px black solid;
+}
+@media (max-width: 768px) {
+  form {
+    width: 65%;
+    height: 100%;
+  }
+  form > p, form > div > p {
+    font-size: 3vw;
+  }
+
+  form > input {
+    height: 3vw;
+    font-size: 3vw;
+  }
+
+  .btn_add, .del_All {
+    width: 100px;
+    height: 30px; 
+  
+    font-size: 16px;
+  }
+}
+@media (max-width: 640px) {
+  .del {
+    font-size: 10px;
+  }
 }

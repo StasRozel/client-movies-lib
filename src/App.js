@@ -1,9 +1,10 @@
+/*пофиксить энтер у мобилок, адаптив*/
+
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import { Form } from './Form';
 
 function MoviesMap(props) {
-  const [movies, setMovies] = useState(null);
   let items;
   if (props.movies != null) {
     items = [...props.movies];
@@ -19,85 +20,6 @@ function MoviesMap(props) {
     }, 500)
 
   }
-  // let settings = document.querySelectorAll('.movie > td');
-
-  // let Options = { title: 0, director: 1, year: 2, genres: 3, rating: 4, duration: 5 };
-  // settings.forEach((el, ind) => {
-  //   const changeParams = () => {
-
-  //     for (const key in Options) {
-  //       let body1;
-  //       if (!((ind - Options[key]) % 6)) {
-
-  //         el.insertAdjacentHTML('afterend', `<input type='text' class = 'patch'>`);
-  //         const patch = document.querySelector('.patch');
-  //         patch.focus();
-  //         el.style.display = 'none';
-
-  //         patch.onkeydown = (e) => {
-  //           if (e.code === 'Enter') {
-  //             switch (Options[key]) {
-  //               case 0:
-  //                 body1 = {
-  //                   "title": patch.value
-  //                 }
-
-  //                 break;
-  //               case 1:
-  //                 body1 = {
-  //                   "director": patch.value
-  //                 }
-
-  //                 break;
-  //               case 2:
-  //                 body1 = {
-  //                   "year": patch.value
-  //                 }
-
-  //                 break;
-  //               case 3:
-  //                 body1 = {
-  //                   "genres": patch.value
-  //                 }
-
-  //                 break;
-  //               case 4:
-  //                 body1 = {
-  //                   "rating": patch.value
-  //                 }
-
-  //                 break;
-  //               case 5:
-  //                 body1 = {
-  //                   "duration": patch.value
-  //                 }
-
-  //                 break;
-  //               default:
-  //                 break;
-
-  //             }
-  //             fetch('https://movies-lib-2zxy.onrender.com/api/movies/' + movies[((ind) - (Options[key])) / 6]._id, {
-  //               method: "PATCH",
-  //               headers: {
-  //                 'Content-Type': 'application/json;charset=utf-8'
-  //               },
-  //               body: JSON.stringify(body1)
-  //             })
-
-  //             el.innerText = (patch.value).split(',');
-  //             el.style.display = 'block';
-  //             patch.remove();
-
-  //           }
-  //         };
-
-  //       }
-  //     }
-
-  //   }
-
-  // })
 
   const changeParams = (event) => {
     let el = event.target;
@@ -110,7 +32,7 @@ function MoviesMap(props) {
     
     patch.focus();
    
-    patch.onkeydown = (e) => {
+    patch.addEventListener('keydown', (e) => {
       let flag = false;
                 if (e.code === 'Enter') {
                   switch (name) {
@@ -167,7 +89,7 @@ function MoviesMap(props) {
                 el.style.display = 'block';
                 patch.remove();
                 }
-              }
+              })
      
   
     
@@ -217,6 +139,8 @@ function App() {
       },
       body: JSON.stringify({})
     })
+
+    window.location.reload();
   }
 
   return (
