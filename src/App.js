@@ -29,71 +29,71 @@ function MoviesMap(props) {
     el.insertAdjacentHTML('afterend', `<input type='text' class = 'patch'>`);
     el.style.display = 'none';
     const patch = document.querySelector('.patch');
-    
+    patch.value = el.innerText;
     patch.focus();
-   
+    
     patch.addEventListener('keydown', (e) => {
       let flag = false;
-                if (e.code === 'Enter' || e.key === 'Enter') {
-                  switch (name) {
-                    case "title":
-                      body1 = {
-                        "title": patch.value
-                      }
-                      flag = true;
-                      break;
-                    case "director":
-                      body1 = {
-                        "director": patch.value
-                      }
-                      flag = true;                  
-                      break;
-                    case "year":
-                      body1 = {
-                        "year": patch.value
-                      }
-                      flag = true;
-                      break;
-                    case "genres":
-                      body1 = {
-                        "genres": patch.value
-                      }
-                      flag = true;
-                      break;
-                    case "rating":
-                      body1 = {
-                        "rating": patch.value
-                      }
-                      flag = true;
-                      break;
-                    case "duration":
-                      body1 = {
-                        "duration": patch.value
-                      }
-                      flag = true;
-                      break;
-                    default:
-                      break;
-    
-                  }
-                }
-                if (flag) {
-                  fetch('https://movies-lib-2zxy.onrender.com/api/movies/' + items[Number(el.parentNode.id)]._id, {
-                  method: "PATCH",
-                  headers: {
-                    'Content-Type': 'application/json;charset=utf-8'
-                  },
-                  body: JSON.stringify(body1)
-                })
-                el.innerText = (patch.value).split(',');
-                el.style.display = 'block';
-                patch.remove();
-                }
-              })
-     
-  
-    
-   
+      if (e.code === 'Enter' || e.key === 'Enter') {
+        switch (name) {
+          case "title":
+            body1 = {
+              "title": patch.value
+            }
+            flag = true;
+            break;
+          case "director":
+            body1 = {
+              "director": patch.value
+            }
+            flag = true;
+            break;
+          case "year":
+            body1 = {
+              "year": patch.value
+            }
+            flag = true;
+            break;
+          case "genres":
+            body1 = {
+              "genres": patch.value
+            }
+            flag = true;
+            break;
+          case "rating":
+            body1 = {
+              "rating": patch.value
+            }
+            flag = true;
+            break;
+          case "duration":
+            body1 = {
+              "duration": patch.value
+            }
+            flag = true;
+            break;
+          default:
+            break;
+
+        }
+      }
+      if (flag) {
+        fetch('https://movies-lib-2zxy.onrender.com/api/movies/' + items[Number(el.parentNode.id)]._id, {
+          method: "PATCH",
+          headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+          },
+          body: JSON.stringify(body1)
+        })
+        el.innerText = (patch.value).split(',');
+        el.style.display = 'block';
+        patch.remove();
+      }
+    })
+
+
+
+
   }
   return !props.movies ? "loading" : props.movies.map((element, index) => {
     return (

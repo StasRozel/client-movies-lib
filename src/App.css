@@ -179,6 +179,7 @@ textarea {
   height: 95%;
   border-top: 2px black solid;
   border-right: 2px black solid;
+  font-size: 2vw;
 }
 @media (max-width: 768px) {
   form {
