@@ -41,7 +41,7 @@ let Form = () => {
         
         if (!checkValidForm()) {
             
-            fetch('https://movies-lib-2zxy.onrender.com/api/getmovie', {
+            fetch('/api/getmovie', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json;charset=utf-8'
