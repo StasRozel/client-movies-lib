@@ -12,7 +12,7 @@ function MoviesMap(props) {
   }
   const moviesDel = (event) => {
     const index = Number(event.target.id);
-    fetch('/api/movies/' + items[index]._id, {
+    fetch('https://movies-lib-2zxy.onrender.com/api/movies/' + items[index]._id, {
       method: 'DELETE'
     })
     .then(res => res.json())  
@@ -87,7 +87,7 @@ function MoviesMap(props) {
           }
         }
         if (flag) {
-          fetch('/api/movies/' + items[Number(el.parentNode.id)]._id, {
+          fetch('https://movies-lib-2zxy.onrender.com/api/movies/' + items[Number(el.parentNode.id)]._id, {
             method: "PATCH",
             headers: {
               'Content-Type': 'application/json;charset=utf-8'
@@ -133,7 +133,7 @@ function MoviesMap(props) {
     const [movies, setMovies] = useState(null);
 
     useEffect(() => {
-      fetch('/api/movies')
+      fetch('https://movies-lib-2zxy.onrender.com/api/movies')
         .then(response => response.json())
         .then(response => { setMovies(response) })
 
@@ -141,7 +141,7 @@ function MoviesMap(props) {
 
 
     const delAll = () => {
-      fetch('/api/movies/del_all', {
+      fetch('https://movies-lib-2zxy.onrender.com/api/movies/del_all', {
         method: "POST",
         headers: {
           'Content-Type': 'application/json;charset=utf-8'
