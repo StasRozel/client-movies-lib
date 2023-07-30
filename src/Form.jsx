@@ -48,7 +48,9 @@ let Form = () => {
                 },
                 body: JSON.stringify(getMovieUser())
             })
-            document.querySelector('form').submit();
+            setTimeout(() => {
+                window.location.reload();
+              }, 500)
         }
         if(checkValidForm() && flag) {
             document.querySelector('.time').insertAdjacentHTML('afterend', `<p class="messageErrorValidForm">Не все поля заполнены!</p>`)
